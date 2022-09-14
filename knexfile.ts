@@ -1,3 +1,5 @@
+import 'dotenv/config';
+
 export default {
     client: 'postgresql',
     connection: {
@@ -12,4 +14,4 @@ export default {
     migrations: {
         tableName: 'knex_migrations',
     },
-}
+};
