@@ -1,7 +1,13 @@
+import { RouterError } from '@errors';
+
 export const existsOrError = (value: unknown, msg: string) => {
-    if (!value) throw msg;
-    if (Array.isArray(value) && value.length == 0) throw msg;
-    if (typeof value == 'string' && !value.trim()) throw msg;
+    if (!value) throw new RouterError({ message: msg }).Error400;
+
+    if (Array.isArray(value) && value.length == 0)
+        throw new RouterError({ message: msg }).Error400;
+
+    if (typeof value == 'string' && !value.trim())
+        throw new RouterError({ message: msg }).Error400;
 };
 
 export const notExistsOrError = (value: unknown, msg: string) => {
