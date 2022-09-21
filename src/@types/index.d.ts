@@ -3,3 +3,9 @@ interface ErrorCustom {
     status?: number;
     internalErr?: string;
 }
+
+interface Category {
+    id: string;
+    name: string;
+    parentId: string;
+}
