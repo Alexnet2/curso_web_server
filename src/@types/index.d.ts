@@ -8,4 +8,5 @@ interface Category {
     id: string;
     name: string;
     parentId: string;
+    childreen?: Category[];
 }
