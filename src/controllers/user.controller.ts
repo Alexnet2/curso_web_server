@@ -4,7 +4,7 @@ import {
     equalsOrError,
     existsOrError,
     notExistsOrError,
-} from '@utils/validation';
+} from '@utils/validation.utils';
 import { Request, Response } from 'express';
 import database from '@config/database';
 
