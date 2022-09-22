@@ -3,7 +3,7 @@ import { RouterError } from '@errors';
 import database from '@config/database';
 import { existsOrError } from '@utils/validation.utils';
 import { Request, Response } from 'express';
-import { withPath } from '@utils/category.utils';
+import { toTree, withPath } from '@utils/category.utils';
 
 export const save = async (req: Request, res: Response) => {
     const category = { ...req.body };
@@ -81,6 +81,17 @@ export const findById = async (req: Request, res: Response) => {
             .first();
 
         res.json(category);
+    } catch (err) {
+        res.status((<ErrorCustom>err).status || 400).send(
+            (<ErrorCustom>err).message,
+        );
+    }
+};
+
+export const getTree = async (req: Request, res: Response) => {
+    try {
+        const categories = await database('categories');
+        res.json(toTree(withPath(categories)));
     } catch (err) {
         res.status((<ErrorCustom>err).status || 400).send(
             (<ErrorCustom>err).message,
