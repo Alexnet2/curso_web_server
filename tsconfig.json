@@ -6,15 +6,33 @@
         "forceConsistentCasingInFileNames": true,
         "strict": true,
         "skipLibCheck": true,
-        "typeRoots": ["./src/@types", "node_modules"],
-        "types": ["./src/@types"],
+        "typeRoots": [
+            "./src/@types",
+            "node_modules"
+        ],
+        "types": [
+            "./src/@types"
+        ],
         "baseUrl": "./src",
         "paths": {
-            "@config/*": ["config/*"],
-            "@utils/*": ["utils/*"],
-            "@errors": ["errors"],
-            "@controllers": ["controllers"],
-            "@routes": ["routes"]
+            "@config/*": [
+                "config/*"
+            ],
+            "@utils/*": [
+                "utils/*"
+            ],
+            "@errors": [
+                "errors"
+            ],
+            "@controllers": [
+                "controllers"
+            ],
+            "@routes": [
+                "routes"
+            ],
+            "@queries": [
+                "queries"
+            ]
         }
     }
 }

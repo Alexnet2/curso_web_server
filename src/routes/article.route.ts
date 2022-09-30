@@ -9,3 +9,5 @@ app.route('/articles/:id')
     .get(articleController.findById)
     .put(articleController.save)
     .delete(articleController.remove);
+
+app.route('/categories/:id/articles').get(articleController.findByCategory);
